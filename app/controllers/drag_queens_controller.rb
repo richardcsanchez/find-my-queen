@@ -1,0 +1,2 @@
+class DragQueensController < ApplicationController
+end
