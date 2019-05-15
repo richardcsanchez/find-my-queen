@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'active_model_serializers'
+gem 'foreman', '~> 0.82.0'
 
 
 # Reduces boot times through caching; required in config/boot.rb
