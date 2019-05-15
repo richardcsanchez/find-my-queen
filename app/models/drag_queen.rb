@@ -1,6 +1,6 @@
 class DragQueen < ApplicationRecord
   has_many :styles
-  has_one :city
+  belongs_to :city
 
   validates :name, presence: true
   validates :style, presence: true
