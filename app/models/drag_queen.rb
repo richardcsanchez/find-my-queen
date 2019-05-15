@@ -1,0 +1,2 @@
+class DragQueen < ApplicationRecord
+end
