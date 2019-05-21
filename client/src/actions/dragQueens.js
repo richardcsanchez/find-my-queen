@@ -1,4 +1,4 @@
-import { resetEventForm } from './eventForm';
+import { formReset } from './formReset';
 
 export const setDragQueens = dragQueens => {
   return {

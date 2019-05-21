@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class CreateDragQueen extends Component {
 
@@ -24,8 +23,7 @@ class CreateDragQueen extends Component {
 
   handleOnSubmit = e => {
     e.preventDefault()
-    createDragQueen(this.state)
-    })
+    this.props.addDragQueen()
   }
 
   render() {
@@ -35,7 +33,7 @@ class CreateDragQueen extends Component {
         <form onSubmit={event => this.handleSubmit(event)}>
             <label>
             Name:
-              <br>
+              <br></br>
             <input
               type="text"
               name="name"
@@ -43,9 +41,10 @@ class CreateDragQueen extends Component {
               onChange={this.handleOnChange}
               value = {this.state.name}
               />
-              </label><br>
+              </label><br></br>
             City:
-              <br>
+              <br></br>
+              <label>
             <input
               type='text'
               name='city'
@@ -53,9 +52,10 @@ class CreateDragQueen extends Component {
               onChange={this.handleOnChange}
               value={this.state.city}
               />
-                </label><br>
+                </label><br></br>
               Style:
-                <br>
+                <br></br>
+                <label>
               <input
                 type='text'
                 name='style'
@@ -63,9 +63,10 @@ class CreateDragQueen extends Component {
                 onChange={this.handleOnChange}
                 value={this.state.style}
                 />
-                  </label><br>
+                  </label><br></br>
                 Bio:
-                  <br>
+                  <br></br>
+                  <label>
               <input
                 type='text'
                 name='bio'
@@ -73,9 +74,10 @@ class CreateDragQueen extends Component {
                 onChange={this.handleOnChange}
                 value={this.state.bio}
                 />
-                  </label><br>
+                  </label><br></br>
+                  <label>
                 Home City:
-                  <br>
+                  <br></br>
                 <input
                   type='text'
                   name='city'
@@ -83,9 +85,10 @@ class CreateDragQueen extends Component {
                   onChange={this.handleOnChange}
                   value={this.state.city}
                   />
-                    </label><br>
+                    </label><br></br>
+                    <label>
                   Image Link:
-                    <br>
+                    <br></br>
                   <input
                     type='text'
                     name='img_url'
@@ -93,13 +96,13 @@ class CreateDragQueen extends Component {
                     onChange={this.handleOnChange}
                     value={this.state.img_url}
                     />
-                      </label><br>
+                      </label><br></br>
               <input type='submit' />
             </form>
-          <div>
+          </div>
     )
   }
 }
 
 
-export default connect(null, {createDragQueen})(CreateDragQueen);
+export default CreateDragQueen;
