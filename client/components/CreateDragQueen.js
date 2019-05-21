@@ -16,22 +16,15 @@ class CreateDragQueen extends Component {
     }
   }
 
-  handleChange = e => {
+  handleOnChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  handleSubmit = e => {
+  handleOnSubmit = e => {
     e.preventDefault()
-
-    this.props.dispatch({ type: 'ADD_DRAG_QUEEN', payload: this.state })
-    this.setState({
-      name: '',
-      city: '',
-      style: '',
-      bio:'',
-      img_url: ''
+    createDragQueen(this.state)
     })
   }
 
@@ -47,7 +40,7 @@ class CreateDragQueen extends Component {
               type="text"
               name="name"
               placeholder="Drag Queen Name"
-              onChange={event => this.handleChange}
+              onChange={this.handleOnChange}
               value = {this.state.name}
               />
               </label><br>
@@ -57,7 +50,7 @@ class CreateDragQueen extends Component {
               type='text'
               name='city'
               placeholder='Home City'
-              onChange={event=> this.handleChange}
+              onChange={this.handleOnChange}
               value={this.state.city}
               />
                 </label><br>
@@ -67,7 +60,7 @@ class CreateDragQueen extends Component {
                 type='text'
                 name='style'
                 placeholder='Drag Style'
-                onChange={event=> this.handleChange}
+                onChange={this.handleOnChange}
                 value={this.state.style}
                 />
                   </label><br>
@@ -77,7 +70,7 @@ class CreateDragQueen extends Component {
                 type='text'
                 name='bio'
                 placeholder='Bio'
-                onChange={event=> this.handleChange}
+                onChange={this.handleOnChange}
                 value={this.state.bio}
                 />
                   </label><br>
@@ -87,7 +80,7 @@ class CreateDragQueen extends Component {
                   type='text'
                   name='city'
                   placeholder='Home City'
-                  onChange={event=> this.handleChange}
+                  onChange={this.handleOnChange}
                   value={this.state.city}
                   />
                     </label><br>
@@ -97,7 +90,7 @@ class CreateDragQueen extends Component {
                     type='text'
                     name='img_url'
                     placeholder='Image URL'
-                    onChange={event=> this.handleChange}
+                    onChange={this.handleOnChange}
                     value={this.state.img_url}
                     />
                       </label><br>
@@ -109,6 +102,6 @@ class CreateDragQueen extends Component {
 }
 
 const mapDispatchToProps = (dispatch) =>
-  
 
-export default connect()(CreateDragQueen);
+
+export default connect(null, {createDragQueen})(CreateDragQueen);
