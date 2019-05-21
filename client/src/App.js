@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import manageDragQueens from '../reducers/manageDragQueens';
-import CreateDragQueen from './components/CreateDragQueen'
-import DragQueen from './components/DragQueen'
-import DragQueenCard from './components/DragQueenCard'
+import manageDragQueens from './reducers/manageDragQueens';
+
 
 
 class App extends Component {
