@@ -101,7 +101,5 @@ class CreateDragQueen extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) =>
-
 
 export default connect(null, {createDragQueen})(CreateDragQueen);
