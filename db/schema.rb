@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_15_185822) do
+ActiveRecord::Schema.define(version: 2019_05_21_224104) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2019_05_15_185822) do
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city"
+    t.string "style"
   end
 
   create_table "styles", force: :cascade do |t|
