@@ -1,20 +1,20 @@
 import React from 'react';
-import { setDragQueens } from '../actions/dragQueens'
+import { setDragQueens } from "../actions/dragQueens"
+const DragQueen = (props) => {
 
-export const DragQueen = (props) => {
-
-
-  return(
+    return (
     <div>
     <h2>Drag Queens:</h2>
-      <h2>{props.name}</h2>
-      <br></br>
-      <img alt={props.name} src={props.img_url}/>
-      <br></br>
-      <p>{props.city}</p>
-      <p>{props.style}</p>
-      <p>{props.bio}</p>
+    { props.dragQueens.map(dragQueen =>
+      <div>
+      <h2>{dragQueen.name}</h2>
+      <img alt={ dragQueen.name } src= {dragQueen.img_url} />
+      <p>{dragQueen.hometown}</p>
+      <p>{dragQueen.style}</p>
+      <p>{dragQueen.bio}</p>
       </div>
+    )}
+  </div>
   )
 }
 
