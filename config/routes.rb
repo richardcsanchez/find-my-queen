@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :cities
-  resources :styles
-  resources :drag_queens
+  namespace :api do
+    resources :drag_queens, except: [:new, :edit]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
