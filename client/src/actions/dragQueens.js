@@ -1,4 +1,4 @@
-import { formReset } from './formReset';
+import { resetForm } from './formReset';
 
 export const setDragQueens = dragQueens => {
   return {
@@ -7,9 +7,9 @@ export const setDragQueens = dragQueens => {
   }
 }
 
-export const addDragQeen = dragQueen => {
+export const addDragQueen = (dragQueen) => {
   return {
-    type:'ADD_DRAG_QUEEN'
+    type:'ADD_DRAG_QUEEN',
     dragQueen
   }
 }
@@ -44,7 +44,7 @@ export const createDragQueen = dragQueen => {
     .then(response => response.json())
     .then(dragQueen => {
       dispatch(addDragQueen(dragQueen))
-      dispatch(resetEventForm())
+      dispatch(resetForm())
     })
   }
 }
@@ -58,4 +58,4 @@ export const deleteDragQueen = (dragQueenId) => {
       dispatch(removeDragQueen(dragQueenId))
     })
   }
-}s
+}
