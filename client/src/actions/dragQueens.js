@@ -3,7 +3,7 @@ import { resetForm } from './formReset';
 export const setDragQueens = dragQueens => {
   return {
     type: 'GET_DRAG_QUEENS',
-    dragQueens
+    dragQueens: dragQueens
   }
 }
 
@@ -23,7 +23,7 @@ export const removeDragQueen = dragQueen => {
 
 export const getDragQueens = () => {
   return dispatch => {
-    const url = 'api/drag_queens'
+    const url = 'http://localhost:3001/api/drag_queens'
     return fetch(url, {
       method: 'GET,'
     })
@@ -37,7 +37,7 @@ export const getDragQueens = () => {
 
 export const createDragQueen = dragQueen => {
   return dispatch => {
-    return fetch('api/drag_queens', {
+    return fetch('http://localhost:3001/api/drag_queens', {
       method: 'POST',
       body: JSON.stringify({dragQueen: dragQueen})
     })
@@ -51,7 +51,7 @@ export const createDragQueen = dragQueen => {
 
 export const deleteDragQueen = (dragQueenId) => {
   return dispatch => {
-    return fetch(`api/drag_queens/${dragQueenId}`, {
+    return fetch(`'http://localhost:3001/api/${dragQueenId}`, {
       method: "DELETE",
     })
     .then(response => {
