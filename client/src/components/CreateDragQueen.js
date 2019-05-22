@@ -8,7 +8,7 @@ class CreateDragQueen extends Component {
 
     this.state = {
     name: '',
-    city: '',
+    hometown: '',
     style: '',
     bio: '',
     img_url: '',
@@ -48,7 +48,7 @@ class CreateDragQueen extends Component {
             <input
               type='text'
               name='city'
-              placeholder='Home City'
+              placeholder='Hometown'
               onChange={this.handleOnChange}
               value={this.state.city}
               />
