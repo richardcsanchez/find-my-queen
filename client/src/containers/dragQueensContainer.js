@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import DragQueen from './components/DragQueen'
-import { setDragQueens } from './actions/dragQueens'
+import DragQueen from '../components/DragQueen'
+import { setDragQueens } from '../actions/dragQueens'
 
 class DragQueensContainer extends Component {
 
   render(){
     return(
       <div>
-        {this.setDragQueens()}
+      <p>Queens</p>
+        {this.setDragQueens}
         </div>
       )
   }
