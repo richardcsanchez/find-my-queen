@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import DragQueen from '../components/DragQueen'
+import DragQueens from '../containers/DragQueens'
 import { setDragQueens } from '../actions/dragQueens'
 
 class DragQueensContainer extends Component {
