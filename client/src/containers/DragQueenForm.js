@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addDragQueen } from '../actions/dragQueens'
-class CreateDragQueen extends Component {
+
+class DragQueenForm extends Component {
 
   constructor(props){
     super(props)
@@ -94,4 +95,4 @@ class CreateDragQueen extends Component {
 }
 
 
-export default CreateDragQueen;
+export default DragQueenForm;
