@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { addDragQueen } from '../actions/dragQueens'
 class CreateDragQueen extends Component {
 
   constructor(props){
@@ -42,7 +42,7 @@ class CreateDragQueen extends Component {
               value = {this.state.name}
               />
               </label><br></br>
-            City:
+            Hometown:
               <br></br>
               <label>
             <input
@@ -75,17 +75,6 @@ class CreateDragQueen extends Component {
                 value={this.state.bio}
                 />
                   </label><br></br>
-                  <label>
-                Home City:
-                  <br></br>
-                <input
-                  type='text'
-                  name='city'
-                  placeholder='Home City'
-                  onChange={this.handleOnChange}
-                  value={this.state.city}
-                  />
-                    </label><br></br>
                     <label>
                   Image Link:
                     <br></br>
