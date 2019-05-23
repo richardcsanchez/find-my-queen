@@ -1,6 +1,7 @@
 import React  from 'react';
 
 const DragQueenCard = ({ dragQueen }) => {
+
   return(
     <div>
     <h2>{dragQueen.name}</h2>
