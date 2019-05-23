@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addDragQueen } from '../actions/dragQueens'
+import { createDragQueen } from '../actions/dragQueens'
 
+import { updateDragQueenFormData } from '../actions/dragQueenForm'
 class DragQueenForm extends Component {
 
-  constructor(props){
-    super(props)
-
-    this.state = {
-    name: '',
-    hometown: '',
-    style: '',
-    bio: '',
-    img_url: '',
-    }
-  }
 
   handleOnChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
+    const { name, value } = e.target;
+    const currentDragQueenData = Object.assign({}, this.props.dragQueenFormData, {
+      [name]: value
     })
+    this.props.updateDragQueenFormData(currentDragQueenData)
   }
 
   handleOnSubmit = e => {
     e.preventDefault()
-    this.props.addDragQueen()
+    this.props.createDragQueen(this.props.dragQueenFormData)
   }
 
   render() {
+    const { name, hometown, style, bio, img_url } = this.props.dragQueenFormData;
     return (
       <div>
       <p>Add Drag Queen</p>
@@ -51,7 +44,7 @@ class DragQueenForm extends Component {
               name='city'
               placeholder='Hometown'
               onChange={this.handleOnChange}
-              value={this.state.city}
+              value={this.state.hometown}
               />
                 </label><br></br>
               Style:
@@ -94,5 +87,11 @@ class DragQueenForm extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    dragQueenFormData: state.dragQueenFormData
+  }
+}
 
-export default DragQueenForm;
+
+export default connect(mapStateToProps, { updateDragQueenFormData, createDragQueen } )(DragQueenForm);
