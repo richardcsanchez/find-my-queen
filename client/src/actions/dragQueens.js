@@ -1,9 +1,10 @@
-import { resetForm } from './formReset';
+import { resetForm } from './dragQueenForm';
 
+//Action Creators
 export const setDragQueens = dragQueens => {
   return {
     type: 'GET_DRAG_QUEENS',
-    dragQueens: dragQueens
+    dragQueens
   }
 }
 
@@ -21,25 +22,26 @@ export const removeDragQueen = dragQueen => {
   }
 }
 
+
+//Async Actions
 export const getDragQueens = () => {
   return dispatch => {
-    const url = 'http://localhost:3001/api/drag_queens'
-    return fetch(url, {
-      method: 'GET,'
-    })
+    return fetch('http://localhost:3001/api/drag_queens')
     .then(res => res.json())
-    .then(dragQueens => {
-      dispatch(setDragQueens(dragQueens))
-    })
+    .then(dragQueens => dispatch(setDragQueens(dragQueens)))
+    }
   }
-}
+
 
 
 export const createDragQueen = dragQueen => {
   return dispatch => {
     return fetch('http://localhost:3001/api/drag_queens', {
       method: 'POST',
-      body: JSON.stringify({dragQueen: dragQueen})
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ dragQueen: dragQueen })
     })
     .then(response => response.json())
     .then(dragQueen => {
