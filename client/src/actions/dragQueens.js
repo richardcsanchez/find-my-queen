@@ -38,7 +38,7 @@ export const createDragQueen = (dragQueen) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ dragQueen: dragQueen } )
+      body: JSON.stringify(dragQueen)
     })
     .then(response => response.json())
     .then(dragQueen => {

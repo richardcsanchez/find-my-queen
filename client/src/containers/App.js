@@ -12,7 +12,6 @@ import manageDragQueens from '../reducers/manageDragQueens';
 class App extends Component {
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         Find My Queen!

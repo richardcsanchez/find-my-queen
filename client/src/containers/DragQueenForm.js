@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createDragQueen } from '../actions/dragQueens'
-
+import { resetForm } from '../actions/dragQueenForm'
 class DragQueenForm extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
     this.state = {
       name: "",
@@ -27,7 +27,7 @@ class DragQueenForm extends Component {
 
   handleOnSubmit = e => {
     e.preventDefault()
-    this.props.createDragQueen()
+    this.props.createDragQueen(this.state)
     }
 
 
@@ -43,7 +43,7 @@ class DragQueenForm extends Component {
               type="text"
               name="name"
               placeholder="Drag Queen Name"
-              onChange={this.handleOnSubmit}
+              onChange={this.handleOnChange}
               value = {this.state.name}
               />
               </label><br></br>
@@ -54,7 +54,7 @@ class DragQueenForm extends Component {
               type='text'
               name='hometown'
               placeholder='Hometown'
-              onChange={this.handleOnSubmit}
+              onChange={this.handleOnChange}
               value={this.state.hometown}
               />
                 </label><br></br>
@@ -65,7 +65,7 @@ class DragQueenForm extends Component {
                 type='text'
                 name='style'
                 placeholder='Drag Style'
-                onChange={this.handleOnSubmit}
+                onChange={this.handleOnChange}
                 value={this.state.style}
                 />
                   </label><br></br>
@@ -76,7 +76,7 @@ class DragQueenForm extends Component {
                 type='text'
                 name='bio'
                 placeholder='Bio'
-                onChange={this.handleOnSubmit}
+                onChange={this.handleOnChange}
                 value={this.state.bio}
                 />
                   </label><br></br>
@@ -87,7 +87,7 @@ class DragQueenForm extends Component {
                     type='text'
                     name='img_url'
                     placeholder='Image URL'
-                    onChange={this.handleOnSubmit}
+                    onChange={this.handleOnChange}
                     value={this.state.img_url}
                     />
                       </label><br></br>
