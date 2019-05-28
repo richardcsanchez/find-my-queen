@@ -15,10 +15,9 @@ class DragQueens extends Component {
   render() {
     return (
       <div>
-
+      <DragQueenForm />
         <h2>Drag Queens:</h2>
         {this.props.dragQueens.map(dragQueen => <DragQueenCard key={dragQueen.id} dragQueen={dragQueen} />)}
-        <DragQueenForm />
       </div>
     )
    }
