@@ -5,10 +5,10 @@ export const setDragQueens = dragQueens => {
   return { type: 'GET_DRAG_QUEENS', dragQueens: dragQueens }
 }
 
-export const addDragQueen = (dragQueen) => {
+export const addDragQueen = dragQueen => {
   return {
     type:'ADD_DRAG_QUEEN',
-    dragQueen
+    dragQueen: dragQueen
   }
 }
 
@@ -22,7 +22,6 @@ export const removeDragQueen = dragQueen => {
 
 //Async Actions
 export const getDragQueens = () => {
-
   return dispatch => {
     return fetch('http://localhost:3001/api/drag_queens')
     .then(res => res.json())
@@ -39,7 +38,7 @@ export const createDragQueen = dragQueen => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ dragQueen: dragQueen })
+      body: JSON.stringify({ dragQueen: dragQueen } )
     })
     .then(response => response.json())
     .then(dragQueen => {
