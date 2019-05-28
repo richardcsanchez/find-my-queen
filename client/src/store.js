@@ -1,6 +1,5 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
-
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import thunk from "redux-thunk";
 import FormReducer from './reducers/dragQueenFormData';
 import DragQueenReducer from './reducers/manageDragQueens'
 
@@ -11,8 +10,10 @@ const reducers = combineReducers({
 
 const middleware = [thunk]
 
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 let store = createStore(reducers,
-  applyMiddleware(...middleware)
+  composeEnhancer(applyMiddleware(...middleware))
 );
 
 export default store
