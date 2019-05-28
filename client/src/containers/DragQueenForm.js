@@ -27,15 +27,7 @@ class DragQueenForm extends Component {
 
   handleOnSubmit = e => {
     e.preventDefault()
-        fetch('http://localhost:3001/api/drag_queens', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(this.state)
-        })
-        .then(response => response.json())
-        .then(console.log)
+    this.props.createDragQueen()
     }
 
 
@@ -108,9 +100,9 @@ class DragQueenForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    dragQueenFormData: state.dragQueenFormData
+    dragQueen: state.dragQueen
   }
 }
 
 
-export default connect(mapStateToProps, { updateDragQueenFormData, createDragQueen } )(DragQueenForm);
+export default connect(mapStateToProps, { createDragQueen } )(DragQueenForm);
