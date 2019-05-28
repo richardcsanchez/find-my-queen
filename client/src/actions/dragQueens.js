@@ -2,10 +2,7 @@ import { resetForm } from './dragQueenForm';
 
 //Action Creators
 export const setDragQueens = dragQueens => {
-  return {
-    type: 'GET_DRAG_QUEENS',
-    dragQueens
-  }
+  return { type: 'GET_DRAG_QUEENS', dragQueens: dragQueens }
 }
 
 export const addDragQueen = (dragQueen) => {
@@ -25,6 +22,7 @@ export const removeDragQueen = dragQueen => {
 
 //Async Actions
 export const getDragQueens = () => {
+
   return dispatch => {
     return fetch('http://localhost:3001/api/drag_queens')
     .then(res => res.json())
