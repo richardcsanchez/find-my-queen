@@ -10,7 +10,6 @@ class DragQueens extends Component {
 
   componentDidMount() {
     this.props.getDragQueens()
-    console.log(this.props)
   }
 
   render() {
@@ -19,16 +18,17 @@ class DragQueens extends Component {
 
         <h2>Drag Queens:</h2>
         {this.props.dragQueens.map(dragQueen => <DragQueenCard key={dragQueen.id} dragQueen={dragQueen} />)}
-  <DragQueenForm />
+        <DragQueenForm />
       </div>
     )
    }
   }
 
-  const mapStateToProps = (state) => {
-    return ({
-      dragQueens: state.dragQueens
-    })
-  }
+const mapStateToProps = state => {
+  return ({
+    dragQueens: state.dragQueens
+  })
+}
+
 
 export default connect(mapStateToProps, { getDragQueens })(DragQueens);
