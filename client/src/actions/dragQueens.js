@@ -8,7 +8,7 @@ export const setDragQueens = dragQueens => {
 export const addDragQueen = dragQueen => {
   return {
     type:'ADD_DRAG_QUEEN',
-    dragQueen: dragQueen
+    dragQueen
   }
 }
 
@@ -31,7 +31,7 @@ export const getDragQueens = () => {
 
 
 
-export const createDragQueen = dragQueen => {
+export const createDragQueen = (dragQueen) => {
   return dispatch => {
     return fetch('http://localhost:3001/api/drag_queens', {
       method: 'POST',
