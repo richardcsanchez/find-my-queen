@@ -4,14 +4,26 @@ import { createDragQueen } from '../actions/dragQueens'
 
 import { updateDragQueenFormData } from '../actions/dragQueenForm'
 class DragQueenForm extends Component {
+  constructor(){
+    super()
+    this.state = {
+      name: '',
+      city: '',
+      style: '',
+      bio: '',
+      img_url: ''
+    }
+    }
 
 
   handleOnChange = e => {
     const { name, value } = e.target;
-    const currentDragQueenData = Object.assign({}, this.props.dragQueenFormData, {
-      [name]: value
+    this.setState({
+      dragQueenFormData: {
+        ...this.state.dragQueenFormData,
+        [name]: value
+      }
     })
-    this.props.updateDragQueenFormData(currentDragQueenData)
   }
 
   handleOnSubmit = e => {
@@ -20,11 +32,10 @@ class DragQueenForm extends Component {
   }
 
   render() {
-    const { name, hometown, style, bio, img_url } = this.props.dragQueenFormData;
     return (
       <div>
       <p>Add Drag Queen</p>
-        <form onSubmit={event => this.handleSubmit(event)}>
+        <form onSubmit={this.handleSubmit}>
             <label>
             Name:
               <br></br>
