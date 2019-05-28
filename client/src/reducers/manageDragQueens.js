@@ -1,6 +1,4 @@
-export default (state = {
-    dragQueens: []
-  }, action) => {
+export default (state = [], action) => {
     switch (action.type) {
       case 'GET_DRAG_QUEENS':
         return action.dragQueens;
