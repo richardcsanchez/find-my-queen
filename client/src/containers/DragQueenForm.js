@@ -3,39 +3,47 @@ import { connect } from 'react-redux';
 import { createDragQueen } from '../actions/dragQueens'
 
 import { updateDragQueenFormData } from '../actions/dragQueenForm'
+
 class DragQueenForm extends Component {
   constructor(){
     super()
     this.state = {
-      name: '',
-      city: '',
-      style: '',
-      bio: '',
-      img_url: ''
+      name: "",
+      hometown: "",
+      style: "",
+      bio: "",
+      img_url: "",
     }
-    }
+  }
 
 
   handleOnChange = e => {
     const { name, value } = e.target;
     this.setState({
-      dragQueenFormData: {
-        ...this.state.dragQueenFormData,
+      ...this.state,
         [name]: value
-      }
     })
   }
 
   handleOnSubmit = e => {
     e.preventDefault()
-    this.props.createDragQueen(this.props.dragQueenFormData)
-  }
+        fetch('http://localhost:3001/api/drag_queens', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.state)
+        })
+        .then(response => response.json())
+        .then(console.log)
+    }
+
 
   render() {
     return (
       <div>
       <p>Add Drag Queen</p>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleOnSubmit}>
             <label>
             Name:
               <br></br>
@@ -52,7 +60,7 @@ class DragQueenForm extends Component {
               <label>
             <input
               type='text'
-              name='city'
+              name='hometown'
               placeholder='Hometown'
               onChange={this.handleOnChange}
               value={this.state.hometown}
