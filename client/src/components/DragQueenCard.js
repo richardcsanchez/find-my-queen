@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, { component }  from 'react';
 
 const DragQueenCard = ({ dragQueen }) => {
 
