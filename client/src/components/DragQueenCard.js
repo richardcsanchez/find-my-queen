@@ -1,4 +1,7 @@
 import React, { component }  from 'react';
+import {deleteDragQueen} from '../actions/dragQueens'
+import DeleteButton from '../containers/DeleteButton'
+
 
 const DragQueenCard = ({ dragQueen }) => {
 
@@ -9,6 +12,7 @@ const DragQueenCard = ({ dragQueen }) => {
     <p>{dragQueen.hometown}</p>
     <p>{dragQueen.style}</p>
     <p>{dragQueen.bio}</p>
+    <DeleteButton id={dragQueen.id} dragQueen={dragQueen}/>
     </div>
 )
 }
