@@ -25,13 +25,8 @@ class DragQueens extends Component {
   render() {
     return (
       <div>
-
-      <DragQueenForm />
-      <div> {this.props.dragQueens.sort(this.sortByName).map(dragQueen =>
-        <DragQueenCard key={dragQueen.id} dragQueen={dragQueen} />)}
-        </div>
         <h2>Drag Queens:</h2>
-        <div className='gallery'>
+        <div className='gallery clearfix'>
         {this.props.dragQueens.sort(this.sortByName).map(dragQueen =>
           <DragQueenImageCard key={dragQueen.id} dragQueen={dragQueen} />)}
           </div>
