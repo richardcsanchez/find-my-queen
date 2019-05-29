@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import DragQueenImageCard from '../components/DragQueenImageCard'
-import DragQueenGrid from './DragQueenGrid'
-import DragQueenCard from '../components/DragQueenCard'
-import DragQueenForm from '../containers/DragQueenForm'
 
 import { getDragQueens } from '../actions/dragQueens'
 
