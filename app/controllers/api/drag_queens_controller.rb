@@ -30,11 +30,7 @@ class Api::DragQueensController < ApplicationController
   end
 
   def destroy
-    if @drag_queen.destroy
-      render json:{ message: "Bye, Girl!"}, status: 204
-    else
-      render json: { message: "Unable to cancel her" }, status: 400
-    end
+     @drag_queen.destroy
   end
 
   private

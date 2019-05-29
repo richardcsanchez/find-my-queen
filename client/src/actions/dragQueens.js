@@ -15,7 +15,7 @@ export const addDragQueen = dragQueen => {
 export const removeDragQueen = dragQueen => {
   return {
     type: 'REMOVE_DRAG_QUEEN',
-    dragQueen: dragQueen
+    dragQueen
   }
 }
 
@@ -48,13 +48,18 @@ export const createDragQueen = (dragQueen) => {
   }
 }
 
-export const deleteDragQueen = (dragQueenId) => {
+export const deleteDragQueen = (dragQueen) => {
   return dispatch => {
-    return fetch(`'http://localhost:3001/api/${dragQueenId}`, {
-      method: "DELETE",
+    return fetch(`http://localhost:3001/api/drag_queens/${dragQueen}`, {
+      method: "DESTROY",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dragQueen)
     })
-    .then(response => {
-      dispatch(removeDragQueen(dragQueenId))
+    .then(response => response.json())
+    .then(dragQueen => {
+      dispatch(removeDragQueen(dragQueen))
     })
   }
 }
