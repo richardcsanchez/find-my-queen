@@ -1,6 +1,5 @@
-
 {
-"name": "find-my-queen",
-"private": true,
-"dependencies": {}
+  "name": "find-my-queen",
+  "private": true,
+  "dependencies": {}
 }
