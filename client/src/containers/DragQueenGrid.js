@@ -1,8 +1,8 @@
-import React from 'react';
-import { DragQueenCard } from '../components/DragQueenCard'
+import React, { Component } from 'react';
+import  DragQueenImageCard from '../components/DragQueenImageCard'
 import { connect } from 'react-redux'
 
-class DragQueenGrid extends React.Component {
+class DragQueenGrid extends Component {
 
 
   sortByName = (a, b) => {
@@ -13,7 +13,16 @@ class DragQueenGrid extends React.Component {
     return 0
   }
 
+
+
   render(){
-    const dr
+    return (
+      <div className='col s12'>
+      {this.props.dragQueens.map(dragQueen =>
+        <DragQueenImageCard key={dragQueen.id} dragQueen={dragQueen} />)}
+      </div>
+    )
   }
 }
+
+export default DragQueenGrid
