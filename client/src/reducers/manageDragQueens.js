@@ -5,7 +5,7 @@ export default (state = [], action) => {
       case 'ADD_DRAG_QUEEN' :
         return state.concat(action.dragQueen);
       case 'REMOVE_DRAG_QUEEN':
-        return {dragQueens: state.dragQueens.filter(dragQueen => dragQueen.id !== action.dragQueen)}
+        return state.filter(dragQueen => dragQueen.id !== action.id)
 
       default:
         return state;
