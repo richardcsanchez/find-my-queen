@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createDragQueen } from '../actions/dragQueens'
 import { resetForm } from '../actions/dragQueenForm'
-import DragQueenImageCard from '../components/DragQueenImageCard'
 
 class DragQueenForm extends Component {
 
