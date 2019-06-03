@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import "./App.css"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
-import DragQueenForm from '../containers/DragQueenForm'
 import DragQueenGrid from '../components/DragQueenGrid'
-import DragQueensContainer from './dragQueensContainer'
-import manageDragQueens from '../reducers/manageDragQueens';
+import DragQueenCard from '../components/DragQueenCard'
 import NewDragQueenForm from '../components/NewDragQueenForm'
 
 
@@ -20,6 +18,7 @@ class App extends Component {
           <Switch>
           <Route exact path = '/drag_queens' component={DragQueenGrid} />
           <Route exact path = '/drag_queens/new' component={NewDragQueenForm} />
+          <Route exact path = '/drag_queens/:id' component={DragQueenCard}/>
         </Switch>
       </Router>
 
