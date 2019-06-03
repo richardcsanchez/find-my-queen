@@ -1,12 +1,15 @@
-import React, { component }  from 'react';
+import React  from 'react';
+import { BrowserRouter as Route, Link } from "react-router-dom";
 
 const DragQueenImageCard = ({ dragQueen }) => {
-  const urlBase = 'http://localhost:3001/api/drag_queens/'
+  const urlBase = '/drag_queens/'
+
 
   return (
     <div>
-    <button>
+    <button >
         <img src={dragQueen.img_url} alt={dragQueen.name} href={urlBase + dragQueen.id}/>
+        <Link to={urlBase + dragQueen.id}>See More</Link>
         </button>
       </div>
   )
