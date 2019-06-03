@@ -42,7 +42,6 @@ class DragQueenForm extends Component {
   render() {
     return (
       <div>
-      <p>Add Drag Queen</p>
         <form onSubmit={this.handleOnSubmit}>
             <label>
             Name:
