@@ -31,17 +31,3 @@
     transform: rotate(360deg);
   }
 }
-
-.gallery { display: grid;    grid-template-columns: repeat(5, 1fr);    grid-template-rows: repeat(5, 5vw);  }
-
-.clearfix{
-  overflow: auto;
-}
-img {
-  float: center;
-  padding: 5px; /* Some padding */
-  max-width: 200px; /* Set a small width */
-  max-height: 200px;
-  width: auto;
-  height: auto;
-}
