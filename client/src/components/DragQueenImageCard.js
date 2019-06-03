@@ -1,16 +1,18 @@
 import React  from 'react';
-import { BrowserRouter as Route, Link } from "react-router-dom";
+import App from '../containers/App.css'
+import { BrowserRouter as Router,  NavLink } from 'react-router-dom';
+import '../components/DragQueensStyling.css'
+
 
 const DragQueenImageCard = ({ dragQueen }) => {
   const urlBase = '/drag_queens/'
 
 
   return (
-    <div>
-    <button >
-        <img src={dragQueen.img_url} alt={dragQueen.name} href={urlBase + dragQueen.id}/>
-        <Link to={urlBase + dragQueen.id}>See More</Link>
-        </button>
+    <div className='DragQueenCard' >
+    <NavLink to={urlBase + dragQueen.id} >
+        <img className='DragQueenImage' src={dragQueen.img_url} alt={dragQueen.name} href={urlBase + dragQueen.id}/>
+        </NavLink>
       </div>
   )
 }
