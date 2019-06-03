@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import DragQueens from '../containers/DragQueens'
-import { setDragQueens } from '../actions/dragQueens'
 
 class DragQueensContainer extends Component {
 
@@ -9,7 +7,7 @@ class DragQueensContainer extends Component {
     return(
       <div>
       <p>Queens</p>
-        {this.setDragQueens}
+        {this.setDragQueens()}
         </div>
       )
   }

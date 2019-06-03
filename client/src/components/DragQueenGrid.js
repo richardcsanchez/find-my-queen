@@ -1,4 +1,4 @@
-import React, { component }  from 'react';
+import React  from 'react';
 import DragQueens from '../containers/DragQueens'
 
 class DragQueenGrid extends React.Component {
