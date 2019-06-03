@@ -30,7 +30,7 @@ class Api::DragQueensController < ApplicationController
   end
 
   def destroy
-     @drag_queen.destroy
+     @drag_queen.delete
   end
 
   private
