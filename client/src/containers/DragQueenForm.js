@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createDragQueen } from '../actions/dragQueens'
-import { resetForm } from '../actions/dragQueenForm'
 
 class DragQueenForm extends Component {
 
@@ -29,7 +28,15 @@ class DragQueenForm extends Component {
   handleOnSubmit = e => {
     e.preventDefault()
     this.props.createDragQueen(this.state)
-    }
+    this.setState({
+      name: "",
+      hometown: "",
+      style: "",
+      bio: "",
+      img_url: "",
+  })
+}
+
 
 
   render() {
