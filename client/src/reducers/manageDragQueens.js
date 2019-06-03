@@ -4,6 +4,17 @@ export default (state = [], action) => {
         return action.dragQueens;
       case 'ADD_DRAG_QUEEN' :
         return state.concat(action.dragQueen);
+      case 'UPDATE_DRAG_QUEEN':
+        state.dragQueen.map(dragQueen => {
+          if (dragQueen.id === action.dragQueen.id) {
+            dragQueen.name = action.dragQueen.name;
+            dragQueen.hometown = action.dragQueen.hometown;
+            dragQueen.style = action.dragQueen.style;
+            dragQueen.img_url = action.dragQueen.img_url;
+            dragQueen.notes = action.dragQueen.notes;
+          }
+        });
+        return {...state, dragQueen: action.dragQueen};
       case 'REMOVE_DRAG_QUEEN':
         return state.filter(dragQueen => dragQueen.id !== action.id)
 
