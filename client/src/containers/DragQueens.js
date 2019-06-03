@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import DragQueenImageCard from '../components/DragQueenImageCard'
-import DragQueenCard from '../components/DragQueenCard'
-
 import { getDragQueens } from '../actions/dragQueens'
 
-class DragQueens extends Component {
+export class DragQueens extends Component {
 
   componentDidMount() {
     this.props.getDragQueens()
@@ -20,11 +18,10 @@ class DragQueens extends Component {
     return 0
   }
 
+
   render() {
     return (
       <div>
-      {this.props.dragQueens.sort(this.sortByName).map(dragQueen =>
-        <DragQueenCard key={dragQueen.id} dragQueen={dragQueen} />)}
         <h2>Drag Queens:</h2>
         <div className='gallery clearfix'>
         {this.props.dragQueens.sort(this.sortByName).map(dragQueen =>
@@ -42,4 +39,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { getDragQueens })(DragQueens);
+export default connect(mapStateToProps, {getDragQueens})(DragQueens);
