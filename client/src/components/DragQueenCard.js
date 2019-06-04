@@ -3,11 +3,9 @@ import DeleteButton from '../containers/DeleteButton'
 import { connect } from 'react-redux';
 import DragQueens from '../containers/DragQueens'
 
-const DragQueenCard = props => {
+const DragQueenCard = (props) => {
 
-  const dragQueen = (props.match.params.id)
-
-console.log(this.state)
+   const dragQueen = props.location.state.dragQueen
 
     return(
         <div>

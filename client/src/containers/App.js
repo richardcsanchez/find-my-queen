@@ -12,6 +12,7 @@ import Nav from 'react-bootstrap/Nav'
 
 class App extends Component {
 
+
   render() {
     return (
       <div className="App">
@@ -23,7 +24,10 @@ class App extends Component {
           <Switch>
           <Route exact path = '/drag_queens' component={DragQueens} />
           <Route exact path = '/drag_queens/new' component={NewDragQueenForm} />
-          <Route exact path = '/drag_queens/:id' component={DragQueenCard}/>
+          <Route
+            path='/drag_queens/:id'
+            render={(props) => <DragQueenCard{...props} />}
+          />
         </Switch>
         </div>
       </Router>

@@ -18,6 +18,7 @@ export class DragQueens extends Component {
     return 0
   }
 
+  
 
   render() {
     return (
@@ -33,6 +34,7 @@ export class DragQueens extends Component {
   }
 
 const mapStateToProps = state => {
+  console.log(state)
   return ({
     dragQueens: state.dragQueens
   })
