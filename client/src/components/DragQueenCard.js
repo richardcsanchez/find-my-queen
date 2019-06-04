@@ -2,6 +2,7 @@ import React  from 'react';
 import DeleteButton from '../containers/DeleteButton'
 import { connect } from 'react-redux';
 import DragQueens from '../containers/DragQueens'
+
 const DragQueenCard = props => {
 
   const dragQueen = (props.match.params.id)

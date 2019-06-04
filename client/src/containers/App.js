@@ -3,7 +3,7 @@ import "./App.css"
 import 'react-bootstrap'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
-import DragQueenGrid from '../components/DragQueenGrid'
+import DragQueens from '../containers/DragQueens'
 import DragQueenCard from '../components/DragQueenCard'
 import NewDragQueenForm from '../components/NewDragQueenForm'
 import NavBar from '../components/NavBar'
@@ -21,7 +21,7 @@ class App extends Component {
         <NavBar />
 
           <Switch>
-          <Route exact path = '/drag_queens' component={DragQueenGrid} />
+          <Route exact path = '/drag_queens' component={DragQueens} />
           <Route exact path = '/drag_queens/new' component={NewDragQueenForm} />
           <Route exact path = '/drag_queens/:id' component={DragQueenCard}/>
         </Switch>
