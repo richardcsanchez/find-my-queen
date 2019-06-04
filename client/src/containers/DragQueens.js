@@ -18,15 +18,20 @@ export class DragQueens extends Component {
     return 0
   }
 
-  
+  sortByHometown = () => {
+    this.props.dragQueens.map(dq => {
+    if (dq.hometown === hometown)
+    return dq })
+  }
 
   render() {
+    debugger
     return (
       <div>
         <h2>Drag Queens:</h2>
         <div className='DragQueensContainer'>
         {this.props.dragQueens.sort(this.sortByName).map(dragQueen =>
-          <DragQueenImageCard key={dragQueen.id} dragQueen={dragQueen} />)}
+          <DragQueenImageCard key={dragQueen.id} dragQueen={dragQueen} state={{ dragQueen: dragQueen}}/>)}
           </div>
       </div>
     )
@@ -34,7 +39,6 @@ export class DragQueens extends Component {
   }
 
 const mapStateToProps = state => {
-  console.log(state)
   return ({
     dragQueens: state.dragQueens
   })
