@@ -7,7 +7,6 @@ class EditDragQueen extends Component {
 
   constructor(props){
     super(props)
-
     this.state = {
       name: props.dragQueen.name,
       hometown: props.dragQueen.hometown,
@@ -16,7 +15,6 @@ class EditDragQueen extends Component {
       img_url: props.dragQueen.img_url,
     }
   }
-
 
   handleOnChange = e => {
     const { name, value } = e.target;
@@ -106,4 +104,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { editDragQueen } )(DragQueenForm);
+export default connect(mapStateToProps, { editDragQueen } )(EditDragQueen);
