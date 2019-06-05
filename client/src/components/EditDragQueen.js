@@ -5,7 +5,8 @@ import { editDragQueen } from '../actions/dragQueens'
 
 const EditDragQueen = (props) => {
 
-const dragQueen = props.location.state.dragQueen
+  
+    const dragQueen = props.location.state.dragQueen
 
 
           const handleOnChange = e => {
@@ -16,15 +17,16 @@ const dragQueen = props.location.state.dragQueen
             })
           }
 
-          const handleOnSubmit = e => {
-            e.preventDefault()
-            dragQueen.editDragQueen(this.state.dragQueen)
+        const handleOnSubmit = e => {
+            this.editDragQueen(dragQueen)
+
             }
 
 
             return (
               <div>
-              <p>Add Drag Queen</p>
+              <br></br>
+              <p>Edit {dragQueen.name}</p>
                 <form onSubmit={dragQueen.handleOnSubmit}>
                     <label>
                     Name:
@@ -34,7 +36,7 @@ const dragQueen = props.location.state.dragQueen
                       name="name"
                       placeholder="Drag Queen Name"
                       onChange={dragQueen.handleOnChange}
-                      value = {dragQueen.name}
+                      defaultValue = {dragQueen.name}
                       />
                       </label><br></br>
                     Hometown:
@@ -45,7 +47,7 @@ const dragQueen = props.location.state.dragQueen
                       name='hometown'
                       placeholder='Hometown'
                       onChange={dragQueen.handleOnChange}
-                      value={dragQueen.hometown}
+                      defaultValue={dragQueen.hometown}
                       />
                         </label><br></br>
                       Style:
@@ -56,7 +58,7 @@ const dragQueen = props.location.state.dragQueen
                         name='style'
                         placeholder='Drag Style'
                         onChange={dragQueen.handleOnChange}
-                        value={dragQueen.style}
+                        defaultValue={dragQueen.style}
                         />
                           </label><br></br>
                         Bio:
@@ -67,10 +69,17 @@ const dragQueen = props.location.state.dragQueen
                         name='bio'
                         placeholder='Bio'
                         onChange={dragQueen.handleOnChange}
-                        value={dragQueen.bio}
+                        defaultValue={dragQueen.bio}
                         />
                           </label><br></br>
+                          <br></br>
+                          <br></br>
+
                             <label>
+                          <img src={dragQueen.img_url}/>
+                          <br></br>
+                          <br></br>
+
                           Image Link:
                             <br></br>
                           <input
@@ -78,7 +87,7 @@ const dragQueen = props.location.state.dragQueen
                             name='img_url'
                             placeholder='Image URL'
                             onChange={dragQueen.handleOnChange}
-                            value={dragQueen.img_url}
+                            defaultValue={dragQueen.img_url}
                             />
                               </label><br></br>
                       <input type='submit' />

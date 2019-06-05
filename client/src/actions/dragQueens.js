@@ -61,9 +61,8 @@ export const editDragQueen = (dragQueen) => {
           'Content-Type': 'application/json'
         }
       })
-      .then(response => response.json())
       .then(dragQueen => {
-        dispatch(editDragQueen(dragQueen))
+        dispatch(updateDragQueen(dragQueen))
     })
   }
 }

@@ -17,17 +17,16 @@ class EditDragQueen extends Component {
   }
 
   handleOnChange = e => {
-    const { name, value } = e.target;
     this.setState({
-      ...this.state,
-        [name]: value
+      [e.target.name]: e.target.value
     })
   }
 
   handleOnSubmit = e => {
     e.preventDefault()
-    this.props.editDragQueen(this.state)
-    }
+    const { editDragQueen, history } = this.props;
+    editDragQueen(this.state, history)
+      }
 
 
   render() {
