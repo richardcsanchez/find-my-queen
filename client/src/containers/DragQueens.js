@@ -18,12 +18,6 @@ export class DragQueens extends Component {
     return 0
   }
 
-  sortByHometown = () => {
-    this.props.dragQueens.map(dq => {
-    if (dq.hometown === hometown)
-    return dq })
-  }
-
   render() {
     debugger
     return (
@@ -43,6 +37,5 @@ const mapStateToProps = state => {
     dragQueens: state.dragQueens
   })
 }
-
 
 export default connect(mapStateToProps, {getDragQueens})(DragQueens);
