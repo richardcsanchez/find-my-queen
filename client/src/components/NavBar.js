@@ -16,6 +16,11 @@ const NavBar = () =>
   <div>
     <NavLink to="/drag_queens" exact style={link} activeStyle={{background: 'grey'}}>Home</NavLink>
     <NavLink to="/drag_queens/new" exact style={link} activeStyle={{ background: 'grey' }}>New Queen</NavLink>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
   </div>;
 
 export default NavBar
