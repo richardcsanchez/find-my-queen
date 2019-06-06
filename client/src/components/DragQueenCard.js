@@ -1,28 +1,44 @@
-import React  from 'react';
+import React, { useState, useEffect }  from 'react';
 import DeleteButton from '../containers/DeleteButton'
 import { connect } from 'react-redux';
 import DragQueens from '../containers/DragQueens'
-import EditDragQueen from './EditDragQueen'
-import { BrowserRouter as Router,  Route, NavLink } from 'react-router-dom';
+import EditDragQueen from '../components/EditDragQueen.js'
+import { BrowserRouter as Router,  Route, NavLink, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 
-const DragQueenCard = (props) => {
+import fetch from '../modules/fetch'
 
-   const dragQueen = props.location.state.dragQueen
+function DragQueenCard({ match }) {
+  const [dragQueen, setDragQueen] = useState({
+    name: '',
+    hometown: '',
+    img_src: '',
+    bio: '',
+    style: ''
+  })
 
-    return(
-        <div className='LargeDragQueenCard'>
-        <br></br>
-        <h2>{dragQueen.name}</h2>
-        <div className='DragQueenShowCard'>
-        <img className ='DragQueenImage' alt={ dragQueen.name } src= {dragQueen.img_url} />
-        </div>
-        <br></br>
-        <p>{dragQueen.hometown}</p>
-        <p>{dragQueen.style}</p>
-        <p>{dragQueen.bio}</p>
-        <DeleteButton id={dragQueen.id} dragQueen={dragQueen}/>
-        <button to= {{pathname: '/drag_queens/' + dragQueen.id + '/edit' , state: { dragQueen: dragQueen}}} >Edit</button>
-        </div>
-    )
-  }
-export default DragQueenCard
+  useEffect(() => {
+    fetch(`api/drag_queens/${match.params.id}`, 'GET')
+    .then(json => setDragQueen(json))
+  }, [])
+
+  return(
+    <div className='LargeDragQueenCard'>
+      <br></br>
+      <h2>{dragQueen.name}</h2>
+      <div className='DragQueenShowCard'>
+      <img className ='DragQueenImage' alt={ dragQueen.name } src= {dragQueen.img_url} />
+      </div>
+      <br></br>
+      <p>{dragQueen.hometown}</p>
+      <p>{dragQueen.style}</p>
+      <p>{dragQueen.bio}</p>
+      <DeleteButton id={dragQueen.id} dragQueen={dragQueen}/>
+      <button>
+        <Link to={{pathname: '/drag_queens/' + dragQueen.id + '/edit' }}>Edit</Link>
+      </button>
+    </div>
+  )
+}
+
+export default withRouter(DragQueenCard)
