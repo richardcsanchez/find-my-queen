@@ -53,20 +53,6 @@ export const createDragQueen = (dragQueen) => {
   }
 }
 
-export const editDragQueen = (dragQueen) => {
-    return dispatch => {
-      return fetch(`/api/drag_queens/${dragQueen}`, {
-        method: "PATCH",
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(dragQueen => {
-        dispatch(updateDragQueen(dragQueen))
-    })
-  }
-}
-
 export const deleteDragQueen = (dragQueen) => {
   return dispatch => {
     return fetch(`/api/drag_queens/${dragQueen}`, {
