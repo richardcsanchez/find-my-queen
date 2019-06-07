@@ -1,8 +1,5 @@
 import React, { useState, useEffect }  from 'react';
 import DeleteButton from '../containers/DeleteButton'
-import { connect } from 'react-redux';
-import DragQueens from '../containers/DragQueens'
-import EditDragQueen from '../components/EditDragQueen.js'
 import { BrowserRouter as Router,  Route, NavLink, Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 
@@ -33,10 +30,12 @@ function DragQueenCard({ match }) {
       <p>{dragQueen.hometown}</p>
       <p>{dragQueen.style}</p>
       <p>{dragQueen.bio}</p>
-      <DeleteButton id={dragQueen.id} dragQueen={dragQueen}/>
-      <button>
-        <Link to={{pathname: '/drag_queens/' + dragQueen.id + '/edit' }}>Edit</Link>
+      <button className='small-button'>
+        <Link className='link' to={{pathname: '/drag_queens/' + dragQueen.id + '/edit' }}>Edit</Link>
       </button>
+      
+      <DeleteButton id={dragQueen.id} dragQueen={dragQueen}/>
+
     </div>
   )
 }
