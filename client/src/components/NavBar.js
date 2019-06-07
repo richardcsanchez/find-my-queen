@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav'
+import { BrowserRouter as  Route, NavLink } from 'react-router-dom';
 
 const link = {
   width: '100px',
