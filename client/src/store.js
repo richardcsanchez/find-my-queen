@@ -5,7 +5,6 @@ import DragQueenReducer from './reducers/manageDragQueens'
 
 const reducers = combineReducers({
   dragQueens: DragQueenReducer,
-  form: FormReducer
 })
 
 const middleware = [thunk]
