@@ -1,5 +1,6 @@
 import React from 'react';
 import DragQueenForm from "../containers/DragQueenForm"
+import '../components/DragQueensStyling.css'
 
 class NewDragQueenForm extends React.Component {
     render() {

@@ -10,7 +10,7 @@ const DragQueenImageCard = ({ dragQueen }) => {
 
   return (
     <div className='DragQueenCard' >
-    <NavLink to= {{pathname: urlBase + "/" + dragQueen.id, state: { dragQueen: dragQueen}}} >
+    <NavLink to= {{pathname: urlBase + "/" + dragQueen.id}} >
         <img className='DragQueenImage' src={dragQueen.img_url} alt={dragQueen.name} />
         </NavLink>
 
