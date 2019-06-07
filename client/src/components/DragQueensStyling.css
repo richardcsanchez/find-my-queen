@@ -25,7 +25,7 @@
     position: relative;
      overflow: hidden;
     }
-    
+
   .DragQueenShowCard {
     display: block;
     margin-left: auto;
@@ -49,4 +49,12 @@
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
+}
+
+.form-field {
+  margin: 4px 0;
+}
+
+.form-field label {
+  display: block;
 }
