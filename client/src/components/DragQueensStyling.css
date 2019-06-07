@@ -58,3 +58,19 @@
 .form-field label {
   display: block;
 }
+
+.link {
+  text-decoration:  none;
+ font-weight:      bold;
+ color: black
+}
+
+.small-button {
+  color: black;
+  background-color: white;
+  float: center;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight:      bold;
+}

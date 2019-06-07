@@ -10,7 +10,7 @@ class DeleteButton extends Component {
 
   render() {
     return (
-        <button onClick={this.handleOnClick}>
+        <button className="small-button" onClick={this.handleOnClick}>
         Delete
         </button>
     )}
