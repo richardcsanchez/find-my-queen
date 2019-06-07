@@ -11,7 +11,6 @@ export default (state = [], action) => {
             dragQueen.hometown = action.dragQueen.hometown;
             dragQueen.style = action.dragQueen.style;
             dragQueen.img_url = action.dragQueen.img_url;
-            dragQueen.notes = action.dragQueen.notes;
           }
         });
         return {...state, dragQueen: action.dragQueen};
