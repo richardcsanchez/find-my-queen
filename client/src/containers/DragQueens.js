@@ -19,7 +19,6 @@ export class DragQueens extends Component {
   }
 
   render() {
-    debugger
     return (
       <div>
         <h2>Drag Queens:</h2>

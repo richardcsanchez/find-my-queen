@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
-import FormReducer from './reducers/dragQueenFormData';
 import DragQueenReducer from './reducers/manageDragQueens'
 
 const reducers = combineReducers({

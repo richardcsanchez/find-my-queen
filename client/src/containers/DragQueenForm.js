@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createDragQueen } from '../actions/dragQueens'
-import DragQueens from './DragQueens'
-import { withRouter } from 'react-router-dom';
-import { push } from 'react-redux'
 
 class DragQueenForm extends Component {
 

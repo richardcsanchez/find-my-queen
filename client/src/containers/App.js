@@ -2,13 +2,11 @@ import React, {Component} from 'react';
 import "./App.css"
 import 'react-bootstrap'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux'
 import DragQueens from '../containers/DragQueens'
 import DragQueenCard from '../components/DragQueenCard'
 import NewDragQueenForm from '../components/NewDragQueenForm'
 import NavBar from '../components/NavBar'
-import Nav from 'react-bootstrap/Nav'
-import EditDragQueen from '../components/EditDragQueen.js'
+import EditDragQueen from './EditDragQueen.js'
 
 class App extends Component {
 
