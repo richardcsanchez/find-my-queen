@@ -15,7 +15,7 @@ function EditDragQueen({ match }) {
     bio: '',
     style: ''
   })
-debugger
+
 
   useEffect(() => {
     fetch(`api/drag_queens/${match.params.id}`, 'GET')
@@ -120,4 +120,4 @@ const mapStateToProps = (state, props) => {
 }
 
 
-export default withRouter(connect(mapStateToProps)(EditDragQueen))
+export default withRouter(connect(mapStateToProps, { editDragQueen})(EditDragQueen))
