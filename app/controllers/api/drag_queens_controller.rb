@@ -23,7 +23,7 @@ class Api::DragQueensController < ApplicationController
 
   def update
     if @drag_queen.update(drag_queen_params)
-      render json: @drag_queen
+      render json: @drag_queen, status: 200
     else
       render json: { message: drag_queen.errors }, status: 400
     end

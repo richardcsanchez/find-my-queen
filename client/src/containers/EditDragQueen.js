@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../components/DragQueensStyling.css'
 import { withRouter } from 'react-router-dom'
 import '../components/DragQueensStyling.css'
-
+import { editDragQueen } from '../actions/dragQueens'
 import fetch from '../modules/fetch'
 
 
@@ -30,11 +30,7 @@ function EditDragQueen({ match }) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    fetch(`api/drag_queens/${match.params.id}`, 'PATCH', {
-      drag_queen: {
-        ...dragQueen
-      }
-    })
+    editDragQueen(dragQueen)
     window.location.href = `/drag_queens/${match.params.id}`
   }
 
@@ -44,7 +40,7 @@ function EditDragQueen({ match }) {
       <p>Edit {dragQueen.name}</p>
       <form onSubmit={handleSubmit}>
         <div className="form-field">
-          <label for="name">Name:</label>
+          <label >Name:</label>
           <input
             type="text"
             name="name"
@@ -56,7 +52,7 @@ function EditDragQueen({ match }) {
         </div>
 
         <div className="form-field">
-          <label for="hometown">Hometown:</label>
+          <label >Hometown:</label>
           <input
             type="text"
             name="hometown"
@@ -68,7 +64,7 @@ function EditDragQueen({ match }) {
         </div>
 
         <div className="form-field">
-          <label for="style">Style:</label>
+          <label >Style:</label>
           <input
             type="text"
             name="style"
@@ -80,7 +76,7 @@ function EditDragQueen({ match }) {
         </div>
 
         <div className="form-field">
-          <label for="bio">Bio:</label>
+          <label >Bio:</label>
           <input
             type="text"
             name="bio"
@@ -92,7 +88,7 @@ function EditDragQueen({ match }) {
         </div>
 
         <div className="form-field">
-          <label for="img_url">Image url:</label>
+          <label >Image url:</label>
           <input
             type="text"
             name="img_url"
@@ -100,7 +96,7 @@ function EditDragQueen({ match }) {
             onChange={handleOnChange}
             value={dragQueen.img_url}
           />
-        
+
         </div>
 
         <div className="form-actions">

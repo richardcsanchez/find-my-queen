@@ -19,6 +19,7 @@ function DragQueenCard({ match }) {
     .then(json => setDragQueen(json))
   }, [])
 
+
   return(
     <div className='LargeDragQueenCard'>
       <br></br>
@@ -33,11 +34,12 @@ function DragQueenCard({ match }) {
       <button className='small-button'>
         <Link className='link' to={{pathname: '/drag_queens/' + dragQueen.id + '/edit' }}>Edit</Link>
       </button>
-      
+
       <DeleteButton id={dragQueen.id} dragQueen={dragQueen}/>
 
     </div>
   )
 }
+
 
 export default withRouter(DragQueenCard)

@@ -11,10 +11,10 @@ export const addDragQueen = dragQueen => {
   }
 }
 
-export const updateDragQueen = dragQueen => {
+export const changeDragQueen = dragQueen => {
   return {
     type: 'UPDATE_DRAG_QUEEN',
-    dragQueen
+    dragQueen: dragQueen
   }
 }
 
@@ -35,7 +35,7 @@ export const getDragQueens = () => {
     }
   }
 
-export const createDragQueen = (dragQueen, routerHistory) => {
+export const createDragQueen = (dragQueen) => {
   return dispatch => {
     return fetch('/api/drag_queens', {
       method: 'POST',
@@ -44,11 +44,28 @@ export const createDragQueen = (dragQueen, routerHistory) => {
       },
       body: JSON.stringify(dragQueen)
     })
-    .then(response => response.json())
+    .then(res => res.json())
     .then(dragQueen => {
       dispatch(addDragQueen(dragQueen))
     })
   }
+}
+
+export const editDragQueen = (dragQueen) => {
+  debugger
+    return dispatch => {
+      debugger
+      return fetch(`/api/drag_queens/${dragQueen.id}`, {
+        method: "PATCH",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({dragQueen: dragQueen})
+      })
+    .then(dragQueen => {dispatch(changeDragQueen(dragQueen))
+    })
+  }
+  window.location.href = `/drag_queens/${dragQueen.id}`
 }
 
 export const deleteDragQueen = (dragQueen) => {

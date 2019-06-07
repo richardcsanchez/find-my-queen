@@ -2,10 +2,13 @@ export default (state = [], action) => {
     switch (action.type) {
       case 'GET_DRAG_QUEENS':
         return action.dragQueens;
-      case 'ADD_DRAG_QUEEN' :
+      case 'FIND_DRAG_QUEEN':
+        return action.dragQueen;
+      case 'ADD_DRAG_QUEEN':
+      debugger
         return state.concat(action.dragQueen);
       case 'UPDATE_DRAG_QUEEN':
-        state.dragQueen.map(dragQueen => {
+        state.dragQueen.map( (dragQueen) => {
           if (dragQueen.id === action.dragQueen.id) {
             dragQueen.name = action.dragQueen.name;
             dragQueen.hometown = action.dragQueen.hometown;
