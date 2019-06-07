@@ -35,6 +35,7 @@ function EditDragQueen({ match }) {
         ...dragQueen
       }
     })
+    window.location.href = `/drag_queens/${match.params.id}`
   }
 
   return (
@@ -51,11 +52,7 @@ function EditDragQueen({ match }) {
             onChange={handleOnChange}
             value={dragQueen.name}
           />
-          {
-            dragQueen.errors
-              ? <span>{dragQueen.errors.name}</span>
-              : null
-          }
+
         </div>
 
         <div className="form-field">
@@ -67,11 +64,7 @@ function EditDragQueen({ match }) {
             onChange={handleOnChange}
             value={dragQueen.hometown}
           />
-          {
-            dragQueen.errors
-              ? <span>{dragQueen.errors.name}</span>
-              : null
-          }
+
         </div>
 
         <div className="form-field">
@@ -83,11 +76,7 @@ function EditDragQueen({ match }) {
             onChange={handleOnChange}
             value={dragQueen.style}
           />
-          {
-            dragQueen.errors
-              ? <span>{dragQueen.errors.name}</span>
-              : null
-          }
+
         </div>
 
         <div className="form-field">
@@ -99,11 +88,7 @@ function EditDragQueen({ match }) {
             onChange={handleOnChange}
             value={dragQueen.bio}
           />
-          {
-            dragQueen.errors
-              ? <span>{dragQueen.errors.name}</span>
-              : null
-          }
+
         </div>
 
         <div className="form-field">
@@ -115,11 +100,7 @@ function EditDragQueen({ match }) {
             onChange={handleOnChange}
             value={dragQueen.img_url}
           />
-          {
-            dragQueen.errors
-              ? <span>{dragQueen.errors.name}</span>
-              : null
-          }
+        
         </div>
 
         <div className="form-actions">
