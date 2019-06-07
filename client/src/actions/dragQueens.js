@@ -53,6 +53,7 @@ export const createDragQueen = (dragQueen) => {
 }
 
 export const editDragQueen = (dragQueen) => {
+  debugger
     return dispatch => {
       return fetch(`/api/drag_queens/${dragQueen}`, {
         method: 'PATCH',
@@ -65,7 +66,6 @@ export const editDragQueen = (dragQueen) => {
       .then(dragQueen => {
           dispatch(changeDragQueen(dragQueen))
     })
-    .then(window.location.href = "/drag_queens")
   }
 }
 

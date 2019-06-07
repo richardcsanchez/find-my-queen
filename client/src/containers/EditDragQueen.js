@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import '../components/DragQueensStyling.css'
 import { editDragQueen } from '../actions/dragQueens'
 import fetch from '../modules/fetch'
+import { connect } from 'react-redux';
 
 
 function EditDragQueen({ match }) {
@@ -14,6 +15,7 @@ function EditDragQueen({ match }) {
     bio: '',
     style: ''
   })
+debugger
 
   useEffect(() => {
     fetch(`api/drag_queens/${match.params.id}`, 'GET')
@@ -31,6 +33,7 @@ function EditDragQueen({ match }) {
   const handleSubmit = e => {
     e.preventDefault()
     editDragQueen(dragQueen)
+    window.location.href = `/drag_queens/${dragQueen.id}`
   }
 
   return (
@@ -106,4 +109,15 @@ function EditDragQueen({ match }) {
   )
 }
 
-export default withRouter(EditDragQueen)
+const mapStateToProps = (state, props) => {
+
+  let id = props.match.params.id
+  let dragQueen = state.dragQueens.find(dragQueen => dragQueen.id === id)
+
+  return {
+    dragQueen: dragQueen
+  }
+}
+
+
+export default withRouter(connect(mapStateToProps)(EditDragQueen))
