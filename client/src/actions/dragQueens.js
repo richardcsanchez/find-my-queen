@@ -1,4 +1,3 @@
-import { resetForm } from './dragQueenForm';
 
 //Action Creators
 export const setDragQueens = dragQueens => {
@@ -36,7 +35,7 @@ export const getDragQueens = () => {
     }
   }
 
-export const createDragQueen = (dragQueen) => {
+export const createDragQueen = (dragQueen, routerHistory) => {
   return dispatch => {
     return fetch('/api/drag_queens', {
       method: 'POST',
@@ -48,7 +47,6 @@ export const createDragQueen = (dragQueen) => {
     .then(response => response.json())
     .then(dragQueen => {
       dispatch(addDragQueen(dragQueen))
-      dispatch(resetForm())
     })
   }
 }
@@ -62,5 +60,6 @@ export const deleteDragQueen = (dragQueen) => {
       }
     })
     .then(dispatch(removeDragQueen(dragQueen)))
+    .then(window.location.href = "/drag_queens")
   }
 }
