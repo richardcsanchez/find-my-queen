@@ -8,7 +8,7 @@ import DragQueenCard from '../components/DragQueenCard'
 import NewDragQueenForm from '../components/NewDragQueenForm'
 import NavBar from '../components/NavBar'
 import Nav from 'react-bootstrap/Nav'
-import EditDragQueen from '../components/EditDragQueen'
+import EditDragQueen from '../components/EditDragQueen.js'
 
 class App extends Component {
 
@@ -24,13 +24,8 @@ class App extends Component {
           <Switch>
           <Route exact path = '/drag_queens' component={DragQueens} />
           <Route exact path = '/drag_queens/new' component={NewDragQueenForm} />
-          <Route path='/drag_queens/:id/edit'
-          render={(props) => <EditDragQueen{...props} />}/>
-          <Route
-            exact path='/drag_queens/:id'
-            render={(props) =>
-              <DragQueenCard{...props}/>}
-          />
+          <Route path='/drag_queens/:id/edit' component={EditDragQueen} />
+          <Route exact path='/drag_queens/:id' component={DragQueenCard}/>
 
         </Switch>
         </div>
