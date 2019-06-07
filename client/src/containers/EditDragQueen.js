@@ -31,7 +31,6 @@ function EditDragQueen({ match }) {
   const handleSubmit = e => {
     e.preventDefault()
     editDragQueen(dragQueen)
-    window.location.href = `/drag_queens/${match.params.id}`
   }
 
   return (
