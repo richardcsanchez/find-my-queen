@@ -17,7 +17,7 @@ class Api::DragQueensController < ApplicationController
     if drag_queen.save
       render json: drag_queen
     else
-      render json: { message: drag_queen.errors }, status: 400
+      render json: drag_queen.errors, status: 400
     end
   end
 
