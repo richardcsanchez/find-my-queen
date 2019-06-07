@@ -48,24 +48,25 @@ export const createDragQueen = (dragQueen) => {
     .then(dragQueen => {
       dispatch(addDragQueen(dragQueen))
     })
+    .then(window.location.href = "/drag_queens")
   }
 }
 
 export const editDragQueen = (dragQueen) => {
-  debugger
     return dispatch => {
-      debugger
-      return fetch(`/api/drag_queens/${dragQueen.id}`, {
-        method: "PATCH",
+      return fetch(`/api/drag_queens/${dragQueen}`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({dragQueen: dragQueen})
+        body: JSON.stringify(dragQueen)
       })
-    .then(dragQueen => {dispatch(changeDragQueen(dragQueen))
+      .then(res => res.json())
+      .then(dragQueen => {
+          dispatch(changeDragQueen(dragQueen))
     })
+    .then(window.location.href = "/drag_queens")
   }
-  window.location.href = `/drag_queens/${dragQueen.id}`
 }
 
 export const deleteDragQueen = (dragQueen) => {
