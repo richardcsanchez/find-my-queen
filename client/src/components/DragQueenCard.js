@@ -32,7 +32,7 @@ function DragQueenCard({ match }) {
       <p>{dragQueen.style}</p>
       <p>{dragQueen.bio}</p>
       <button className='small-button'>
-        <Link className='link' to={{pathname: '/drag_queens/' + dragQueen.id + '/edit' }}>Edit</Link>
+        <Link className='link'key={dragQueen.id} to={{pathname: '/drag_queens/' + dragQueen.id + '/edit' } }>Edit</Link>
       </button>
 
       <DeleteButton id={dragQueen.id} dragQueen={dragQueen}/>
