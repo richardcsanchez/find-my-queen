@@ -5,7 +5,6 @@ import '../components/DragQueensStyling.css'
 const DragQueenImageCard = ({ dragQueen }) => {
   const urlBase = '/drag_queens'
 
-
   return (
     <div className='DragQueenCard' >
     <NavLink to= {{pathname: urlBase + "/" + dragQueen.id}} >
@@ -15,7 +14,5 @@ const DragQueenImageCard = ({ dragQueen }) => {
       </div>
   )
 }
-
-
 
 export default DragQueenImageCard;
