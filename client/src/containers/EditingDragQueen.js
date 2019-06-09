@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { editDragQueen } from '../actions/dragQueens';
 
-
-  class EditingDragQueen extends Component {
+class EditingDragQueen extends Component {
 
   constructor(props) {
     super(props);
@@ -24,16 +23,14 @@ handleOnChange = e => {
 }
 
 handleOnSubmit = e => {
-  debugger
   e.preventDefault();
-  editDragQueen(this.state);
-  this.props.history.push(`/drag_queens/${this.state.id}`)
+  this.props.editDragQueen(this.state);
 }
 
 render() {
-debugger
   return(
-
+    <div>
+      <h2>Edit Drag Queen</h2>
     <div className="container-fluid text-center">
       <form style={{marginTop: '16px'}} onSubmit={this.handleOnSubmit}>
         <label>
@@ -89,11 +86,11 @@ debugger
                 <div className="form-actions">
                   <input type='submit' />
                 </div>
-      </form>
-
-    </div>
-  )
-}
+            </form>
+        </div>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = (state, props) => {
