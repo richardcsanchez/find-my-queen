@@ -8,6 +8,7 @@ export default (state = [], action) => {
       debugger
         return state.concat(action.dragQueen);
       case 'UPDATE_DRAG_QUEEN':
+        debugger
         state.dragQueen.map((dragQueen) => {
           if (dragQueen.id === action.dragQueen.id) {
             dragQueen.name = action.dragQueen.name;

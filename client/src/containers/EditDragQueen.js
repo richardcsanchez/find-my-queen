@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 
 
 function EditDragQueen({ match }) {
+
   const [dragQueen, setDragQueen] = useState({
     name: '',
     hometown: '',
@@ -15,7 +16,6 @@ function EditDragQueen({ match }) {
     bio: '',
     style: ''
   })
-
 
   useEffect(() => {
     fetch(`api/drag_queens/${match.params.id}`, 'GET')
@@ -32,8 +32,13 @@ function EditDragQueen({ match }) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    editDragQueen(dragQueen)
-    window.location.href = `/drag_queens/${dragQueen.id}`
+
+    fetch(`api/drag_queens/${match.params.id}`, 'PATCH', {
+    drag_queen: {
+        ...dragQueen
+      }
+    })
+    window.location.href = `/drag_queens/${match.params.id}`
   }
 
   return (
@@ -109,15 +114,6 @@ function EditDragQueen({ match }) {
   )
 }
 
-const mapStateToProps = (state, props) => {
-
-  let id = props.match.params.id
-  let dragQueen = state.dragQueens.find(dragQueen => dragQueen.id === id)
-
-  return {
-    dragQueen: dragQueen
-  }
-}
 
 
-export default withRouter(connect(mapStateToProps, { editDragQueen})(EditDragQueen))
+export default withRouter(EditDragQueen)
