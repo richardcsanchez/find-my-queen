@@ -6,7 +6,6 @@ import { getDragQueens } from '../actions/dragQueens'
 
 export class DragQueens extends Component {
 
-
   sortByName = (a, b) => {
     if (a.name < b.name)
       return -1;
@@ -14,6 +13,7 @@ export class DragQueens extends Component {
       return 1
     return 0
   }
+
   render() {
     debugger
     return (
@@ -34,4 +34,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, {getDragQueens})(DragQueens);
+export default connect(mapStateToProps)(DragQueens);
