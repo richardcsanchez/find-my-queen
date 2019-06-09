@@ -1,24 +1,33 @@
-# README
+# Find My Queen
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CRUD App using React/Redux framework. 
 
-Things you may want to cover:
+Built using HTML, CSS, Javascript, Ruby on Rails, React, and Materialize CSS framework
 
-* Ruby version
+# Installation Instructions
 
-* System dependencies
+Setup Rails API backend:
 
-* Configuration
+Clone this repo, and then navigate to the repo directory in your terminal.
 
-* Database creation
+Run bundle install to install all gem dependencies.
 
-* Database initialization
+Run all rake migrations with rake db:migrate
 
-* How to run the test suite
+Setup React server frontend:
 
-* Services (job queues, cache servers, search engines, etc.)
+Change directories into client folder: cd client
 
-* Deployment instructions
+Run npm install to install all package dependencies
 
-* ...
+Run Rake Start to start up both servers.
+
+# Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/richardcsanchez/find-my-queen. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+
+# License
+The gem is available as open source under the terms of the MIT License.
+
+
+
+
