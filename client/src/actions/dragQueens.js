@@ -36,7 +36,6 @@ export const getDragQueens = () => {
   }
 
 export const createDragQueen = (dragQueen) => {
-  debugger
   return dispatch => {
     return fetch('/api/drag_queens', {
       method: 'POST',
@@ -71,7 +70,6 @@ export const editDragQueen = (dragQueen) => {
 }
 
 export const deleteDragQueen = (dragQueen) => {
-  debugger
   return dispatch => {
     return fetch(`/api/drag_queens/${dragQueen}`, {
       method: "DELETE",
