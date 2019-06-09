@@ -6,9 +6,6 @@ import { getDragQueens } from '../actions/dragQueens'
 
 export class DragQueens extends Component {
 
-  componentDidMount() {
-    this.props.getDragQueens()
-  }
 
   sortByName = (a, b) => {
     if (a.name < b.name)
@@ -17,8 +14,8 @@ export class DragQueens extends Component {
       return 1
     return 0
   }
-
   render() {
+    debugger
     return (
       <div>
         <h2>Drag Queens:</h2>
