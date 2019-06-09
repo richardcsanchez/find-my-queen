@@ -54,7 +54,6 @@ export const createDragQueen = (dragQueen) => {
 }
 
 export const editDragQueen = (dragQueen) => {
-  debugger
     return dispatch => {
       return fetch(`/api/drag_queens/${dragQueen.id}`, {
         method: 'PATCH',
@@ -67,6 +66,7 @@ export const editDragQueen = (dragQueen) => {
       .then(dragQueen => {
           dispatch(changeDragQueen(dragQueen))
     })
+    .then(window.location.href = "/drag_queens")
   }
 }
 
@@ -82,6 +82,4 @@ export const deleteDragQueen = (dragQueen) => {
     .then(dispatch(removeDragQueen(dragQueen)))
     .then(window.location.href = "/drag_queens")
   }
-
-
 }
