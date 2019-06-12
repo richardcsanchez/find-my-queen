@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createDragQueen } from '../actions/dragQueens'
+import { Redirect } from 'react-router'
 
 class DragQueenForm extends Component {
 
@@ -8,11 +9,14 @@ class DragQueenForm extends Component {
     super(props)
 
     this.state = {
-      name: "",
-      hometown: "",
-      style: "",
-      bio: "",
-      img_url: "",
+      dragQueen: {
+        name: "",
+        hometown: "",
+        style: "",
+        bio: "",
+        img_url: ""
+      },
+      redirect: false
     }
   }
 
@@ -29,11 +33,14 @@ class DragQueenForm extends Component {
     e.preventDefault()
     this.props.createDragQueen(this.state)
     this.setState({
-      name: "",
-      hometown: "",
-      style: "",
-      bio: "",
-      img_url: "",
+      dragQueen: {
+        name: "",
+        hometown: "",
+        style: "",
+        bio: "",
+        img_url: ""
+      },
+      redirect: true
     })
   }
 
@@ -42,6 +49,7 @@ class DragQueenForm extends Component {
   render() {
     return (
       <div>
+      { this.state.redirect === true ? <Redirect to='/drag_queens' /> : null }
         <form onSubmit={this.handleOnSubmit}>
             <label>
             Name:

@@ -17,6 +17,7 @@ export default (state = [], action) => {
         });
         return {...state, dragQueen: action.dragQueen};
       case 'REMOVE_DRAG_QUEEN':
+        alert('She\'s cancelled!')
         return state.filter(dragQueen => dragQueen.id !== action.id)
 
       default:

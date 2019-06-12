@@ -25,7 +25,6 @@ export const removeDragQueen = dragQueen => {
   }
 }
 
-
 //Async Actions
 export const getDragQueens = () => {
   return dispatch => {
@@ -34,6 +33,8 @@ export const getDragQueens = () => {
     .then(dragQueens => dispatch(setDragQueens(dragQueens)))
     }
   }
+
+
 
 export const createDragQueen = (dragQueen) => {
   return dispatch => {
@@ -48,7 +49,6 @@ export const createDragQueen = (dragQueen) => {
     .then(dragQueen => {
       dispatch(addDragQueen(dragQueen))
     })
-    .then(window.location.href = "/drag_queens")
   }
 }
 
@@ -65,7 +65,7 @@ export const editDragQueen = (dragQueen) => {
       .then(dragQueen => {
           dispatch(changeDragQueen(dragQueen))
     })
-    .then(window.location.href = "/drag_queens")
+    .then(window.location.href = `/drag_queens/${dragQueen.id}`)
   }
 }
 
