@@ -35,8 +35,8 @@ class App extends Component {
           <Route  path ='/drag_queens/new' component={NewDragQueenForm} />
           <Route  path='/drag_queens/:id/edit' component={EditingDragQueen} />
           <Route path='/drag_queens/:id' component={DragQueenCard} />
-          <Route render={() => (<div> Sorry, this page does not exist. </div>)} />
-        </Switch>
+          { <Route path="/" /> ? <Redirect to="/drag_queens" /> : null}
+          </Switch>
         </div>
       </Router>
 
