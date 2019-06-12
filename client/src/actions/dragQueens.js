@@ -49,10 +49,12 @@ export const createDragQueen = (dragQueen) => {
     .then(dragQueen => {
       dispatch(addDragQueen(dragQueen))
     })
+    .catch(alert("Error: Unable to create drag queen, all inputs must have a value."))
   }
 }
 
 export const editDragQueen = (dragQueen) => {
+  debugger
     return dispatch => {
       return fetch(`/api/drag_queens/${dragQueen.id}`, {
         method: 'PATCH',
@@ -65,6 +67,7 @@ export const editDragQueen = (dragQueen) => {
       .then(dragQueen => {
           dispatch(changeDragQueen(dragQueen))
     })
+    .catch(alert("Error: Unable to update drag queen, all inputs must have a value."))
     .then(window.location.href = `/drag_queens/${dragQueen.id}`)
   }
 }
