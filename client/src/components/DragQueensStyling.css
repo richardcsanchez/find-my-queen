@@ -55,6 +55,17 @@
   margin: 4px 0;
 }
 
+.outer-container {
+  float: left;
+  background: pink;
+  width: 208px;
+  height: 265px;
+  border:1px;
+  margin: 1.5%;
+}
+.vote-button {
+  text-align:center;
+}
 .form-field label {
   display: block;
 }
