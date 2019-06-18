@@ -11,7 +11,7 @@ class AddTips extends Component {
       tips: tips + 1
     }))
   }
-  
+
   addMediumTip = () => {
     this.setState(({ tips }) => ({
       tips: tips + 3
@@ -27,19 +27,19 @@ class AddTips extends Component {
   render(){
     return (
       <div>
-      Add a Tip:
-      <br></br>
-      <button className = "tip-button" onClick={this.addSmallTip}>
-       $1
-      </button>
-      <button className = "tip-button" onClick={this.addMediumTip}>
-      $3
-        </button>
-        <button className = "tip-button" onClick={this.addLargeTip}>
-        $5
-          </button>
+        Add a Tip:
           <br></br>
-          Total Tips: ${this.state.tips}
+        <button className = "tip-button small-button" onClick={this.addSmallTip}>
+          $1
+        </button>
+        <button className = "tip-button small-button" onClick={this.addMediumTip}>
+          $3
+        </button>
+        <button className = "tip-button small-button" onClick={this.addLargeTip}>
+          $5
+        </button>
+          <br></br>
+        Total Tips: ${this.state.tips}
       </div>
     )
   }
