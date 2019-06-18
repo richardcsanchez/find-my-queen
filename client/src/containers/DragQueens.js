@@ -15,7 +15,7 @@ export class DragQueens extends Component {
       <div>
         <h2>Drag Queens:</h2>
           <div className='DragQueensContainer'>
-            <DragQueenGrid dragQueens={this.props.dragQueens}  />
+            <DragQueenGrid dragQueens={this.props.dragQueens} />
           </div>
       </div>
     )

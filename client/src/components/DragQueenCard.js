@@ -26,15 +26,18 @@ function DragQueenCard({ match }) {
       <div className='DragQueenShowCard'>
         <img className ='DragQueenImage' alt={ dragQueen.name } src= {dragQueen.img_url} />
       </div>
-      <br></br>
+        <br></br>
       <h4>Hometown:</h4>
-      <p>{dragQueen.hometown}</p>
+        <p>{dragQueen.hometown}</p>
+
       <h4>Drag Style:</h4>
-      <p>{dragQueen.style}</p>
+        <p>{dragQueen.style}</p>
+        
       <h4>Bio:</h4>
-      <p>{dragQueen.bio}</p>
+        <p>{dragQueen.bio}</p>
+
       <button className='small-button'>
-        <Link className='link'key={dragQueen.id} to={{pathname: '/drag_queens/' + dragQueen.id + '/edit' } }>Edit</Link>
+        <Link className='link' dragQueen={dragQueen} key={dragQueen.id} to={{pathname: '/drag_queens/' + dragQueen.id + '/edit' } }>Edit</Link>
       </button>
 
       <DeleteButton id={dragQueen.id} dragQueen={dragQueen}/>

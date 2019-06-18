@@ -10,7 +10,7 @@ const DragQueenImageCard = ({ dragQueen }) => {
   return (
       <div className='outer-container'>
         <div className='DragQueenCard' >
-          <NavLink to= {{pathname: urlBase + "/" + dragQueen.id}} >
+          <NavLink dragQueen= {dragQueen} to= {{pathname: urlBase + "/" + dragQueen.id}} >
             <img className='DragQueenImage' src={dragQueen.img_url} alt={dragQueen.name} />
           </NavLink>
         </div>
