@@ -6,6 +6,10 @@ import DragQueenGrid from '../components/DragQueenGrid'
 
 export class DragQueens extends Component {
 
+  componentDidMount() {
+    this.props.getDragQueens()
+  }
+
   render() {
     return (
       <div>
@@ -24,4 +28,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps)(DragQueens);
+export default connect(mapStateToProps, { getDragQueens })(DragQueens);
