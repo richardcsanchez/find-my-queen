@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../components/DragQueensStyling.css'
-import DragQueenImageCard from '../components/DragQueenImageCard'
 import { getDragQueens } from '../actions/dragQueens'
+import DragQueenGrid from '../components/DragQueenGrid'
 
 export class DragQueens extends Component {
-
-  sortByName = (a, b) => {
-    if (a.name < b.name)
-      return -1;
-    if (a.name > b.name)
-      return 1
-    return 0
-  }
 
   render() {
     return (
       <div>
         <h2>Drag Queens:</h2>
-        <div className='DragQueensContainer'>
-        {this.props.dragQueens.sort(this.sortByName).map(dragQueen =>
-          <DragQueenImageCard key={dragQueen.id} dragQueen={dragQueen} state={{ dragQueen: dragQueen}}/>)}
+          <div className='DragQueensContainer'>
+            <DragQueenGrid dragQueens={this.props.dragQueens}  />
           </div>
       </div>
     )
