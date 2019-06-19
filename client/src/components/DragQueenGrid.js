@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import DragQueens from '../containers/DragQueens'
-import DragQueenImageCard from './DragQueenImageCard'
+import DragQueenGridCard from './DragQueenGridCard'
+
 
 export default class DragQueenGrid extends Component {
 
@@ -12,13 +12,13 @@ export default class DragQueenGrid extends Component {
     return 0
   }
 
-  render(){
+  render() {
     return(
       <div>
       { this.props.dragQueens.sort(this.sortByName).map(dragQueen =>
-          <DragQueenImageCard key={dragQueen.id} dragQueen={dragQueen}  />)}
+          <DragQueenGridCard key={dragQueen.id} dragQueen={dragQueen}  />
+        )}
       </div>
     )
   }
-
 }
