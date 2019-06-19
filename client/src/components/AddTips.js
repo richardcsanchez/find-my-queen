@@ -2,26 +2,13 @@ import React, { Component } from 'react';
 
 class AddTips extends Component {
 
-  state = {
-    tips: 0
+  constructor(props){
+    super(props)
+    this.handleAddTip=this.handleAddTip.bind(this)
   }
 
-  addSmallTip = () => {
-    this.setState(({ tips }) => ({
-      tips: tips + 1
-    }))
-  }
-
-  addMediumTip = () => {
-    this.setState(({ tips }) => ({
-      tips: tips + 3
-    }))
-  }
-
-  addLargeTip = () => {
-    this.setState(({ tips }) => ({
-      tips: tips + 5
-    }))
+  handleAddTip(e){
+    this.props.onAddTip(e.target.value)
   }
 
   render(){
@@ -29,17 +16,11 @@ class AddTips extends Component {
       <div>
         Add a Tip:
           <br></br>
-        <button className = "tip-button small-button" onClick={this.addSmallTip}>
+        <button className = "tip-button small-button"
+          onClick={this.handleAddTip}>
           $1
         </button>
-        <button className = "tip-button small-button" onClick={this.addMediumTip}>
-          $3
-        </button>
-        <button className = "tip-button small-button" onClick={this.addLargeTip}>
-          $5
-        </button>
           <br></br>
-        Total Tips: ${this.state.tips}
       </div>
     )
   }
