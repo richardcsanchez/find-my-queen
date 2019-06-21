@@ -4,10 +4,9 @@ class AddTips extends Component {
 
   constructor(props){
     super(props)
-    this.handleAddTip=this.handleAddTip.bind(this)
   }
 
-  handleAddTip(e){
+  handleAddTip = (e) => {
     this.props.onAddTip(e.target.value)
   }
 
