@@ -1,7 +1,10 @@
 
 //Action Creators
 export const setDragQueens = dragQueens => {
-  return { type: 'GET_DRAG_QUEENS', dragQueens: dragQueens }
+  return {
+    type: 'GET_DRAG_QUEENS',
+    dragQueens: dragQueens
+  }
 }
 
 export const addDragQueen = dragQueen => {
