@@ -4,20 +4,36 @@ import DragQueenGridCard from './DragQueenGridCard'
 
 export default class DragQueenGrid extends Component {
 
-  sortByName = (a, b) => {
-    if (a.name < b.name)
-      return -1;
-    if (a.name > b.name)
-      return 1
-    return 0
-  }
-
   render() {
+    const filterText = this.props.filterText
+    const cards = []
+
+    const sortedDragQueens = this.props.dragQueens.sort((function (a, b) {
+      if (a.name < b.name) {
+          return -1;
+      }
+      if (b.name > a.name) {
+          return 1;
+      }
+      return 0;
+    })
+  )
+
+    sortedDragQueens.forEach((dq) =>{
+
+    if (dq.name.indexOf(filterText)) {
+      return
+    }
+      cards.push(
+        <DragQueenGridCard dragQueen={dq} key={dq.id}/>
+      )
+    }
+  )
+  
     return(
+
       <div>
-      { this.props.dragQueens.sort(this.sortByName).map(dragQueen =>
-          <DragQueenGridCard key={dragQueen.id} dragQueen={dragQueen}  />
-        )}
+      {cards}
       </div>
     )
   }
