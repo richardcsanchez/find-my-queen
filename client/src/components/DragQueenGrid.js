@@ -20,8 +20,10 @@ export default class DragQueenGrid extends Component {
   )
 
     sortedDragQueens.forEach((dq) =>{
+      const dqName = dq.name.toLowerCase()
+      const lowerCaseFilterText = filterText.toLowerCase()
 
-    if (dq.name.indexOf(filterText)) {
+    if (dqName.indexOf(lowerCaseFilterText)) {
       return
     }
       cards.push(
@@ -29,7 +31,7 @@ export default class DragQueenGrid extends Component {
       )
     }
   )
-  
+
     return(
 
       <div>
